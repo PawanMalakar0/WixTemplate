@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Scroll Trigger</title>
+</head>
+
+<body>
+    <div id="main">
+
+    </div>
+    <div id="main2">
+        <div class="circle"></div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        // gsap.to('.circle', {
+        //     x:700,
+        //     duration: 3,
+        //     ScrollTrigger :{
+        //         trigger : ".circle",
+        //         top : "top center",
+        //         end: "center 20%",
+        //         toggleActions: " restart none  none none",
+        //         markers : true
+        //         //               onstart onleave onenterback onleaveback
+        //     }     ,  
+        //     //scorllTrigger:".circle2" this will give direct instruction that when circle2 visisble in screen view port animation will start 
+        //     // scrollTrigger: {
+        //     //     trigger: ".circle",             // this is the object of the scroll trigger that applies on the circle2 that when meets the starts position
+        //     //     // start:"top center",
+        //     //     start: "top 30%",
+        //     //     // end: "center 20%",
+        //     //     end :()=>{`+=${document.querySelector('.circle').offsetHeight}`},
+        //     //     markers: true,     // that will give properties to set markers
+        //     //     // markers :{
+        //     //     //     startColor :"purple",
+        //     //     //     endColor : "fuchsia",       //this will us modify the icons of the markers 
+        //     //     //     fontSize :"4rem",
+        //     //     //     indent :200
+        //     //     // }
+        //     //     toggleClass: "red"
+        //     // }
+        // })
+
+        gsap.to('.circle', {
+            x: 700,
+            duration: 3,
+            ScrollTrigger: {
+                trigger: ".circle",
+                top: "top center",
+                end: "center 40%",
+                toggleActions: "play none  none none",
+                markers:true
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>

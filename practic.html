@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollTrigger</title>
+    <style>
+        * {
+            height: 100vh;
+            /* width: 100vw; */
+
+        }
+
+        .mainx {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(153, 223, 142);
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+            /* background-color: yellow; */
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background: blue;
+        }
+
+        .box1 {
+            margin-top: 200px;
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+
+        .box2 {
+            margin-top: 400px;
+            height: 100px;
+            width: 100px;
+            background: rgb(8, 1, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainx"></div>
+    <div class="main">
+        <div class="box"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to('.box', {
+             scrollTrigger: {
+                trigger: ".box",
+                start:"top center",
+                end : " top 100px",
+                pin:true,
+                scrub : 3,
+
+                markers :true,
+                toggleActions: " restart none restart none"
+             
+
+            },
+            x: 400,
+           rotation: 360,
+           duration:3
+
+        })
+        gsap.to('.box1', {
+             scrollTrigger: {
+                trigger: ".box1",
+                start:"top center",
+                end : " top 100px",
+                scrub : 3,
+                pin:true,
+                markers :true,
+                toggleActions: " restart none restart none"
+             
+
+            },
+            x: 400,
+           rotation: 360,
+           duration:3
+
+        })
+        gsap.to('.box2', {
+             scrollTrigger: {
+                trigger: ".box2",
+                start:"top center",
+                end : " top 100px",
+                scrub : 3,
+                pin:true,
+
+                markers :true,
+                toggleActions: " restart none restart none"
+             
+
+            },
+            x: 400,
+           rotation: 360,
+           duration:3
+
+        })
+    </script>
+</body>
+
+</html>
